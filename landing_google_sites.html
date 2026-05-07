@@ -369,11 +369,14 @@
                     </h2>
                     <p style="font-style: italic; opacity: 0.6; max-width: 500px; margin: 0 auto;">Únete para realizar emotivas charlas, clases en vivo, se parte de la restauración de nuestra memoria originaria, rumbo a una nación soberana</p>
                     
-                    <form name="registro" method="POST" data-netlify="true" action="/gracias">
+                    <form name="registro" method="POST" data-netlify="true">
                         <input type="hidden" name="form-name" value="registro" />
                         <input type="email" name="email" class="reg-input" placeholder="Ingresa tu correo" required>
+                        <div id="form-message" style="margin-top: 20px; font-size: 0.9rem;"></div>
                         <button type="submit" class="btn btn-gold">REGISTRARME</button>
                     </form>
+                    </div>
+                    </div>
 
                     <div id="success-state">
                         <i class="fas fa-check-circle" style="font-size: 40px; color: var(--andean-gold); margin-bottom: 20px;"></i>
@@ -436,15 +439,53 @@
     </div>
 
     <script>
-        function handleForm(e) {
-            e.preventDefault();
-            document.getElementById('main-form').style.display = 'none';
-            document.getElementById('success-state').style.display = 'block';
-            
-            setTimeout(() => {
-                window.open('https://docs.google.com/forms/d/e/1FAIpQLSc4eJ5OR1gGr_y5TJfS6Q77fWIjtH0mhh3n4U6a6lp5--h9IQ/viewform?usp=publish-editor', '_blank');
-            }, 1500);
+    // Esperar a que la página cargue completamente
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form[name="registro"]');
+        const messageDiv = document.getElementById('form-message');
+        
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Mostrar mensaje de "enviando..."
+                if (messageDiv) {
+                    messageDiv.innerHTML = '<div style="color: #D4AF37; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 20px;"><i class="fas fa-spinner fa-pulse"></i> Enviando...</div>';
+                }
+                
+                const formData = new FormData(form);
+                
+                try {
+                    const response = await fetch('/', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    if (response.ok) {
+                        if (messageDiv) {
+                            messageDiv.innerHTML = '<div style="color: #D4AF37; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 20px;"><i class="fas fa-check-circle"></i> ¡Gracias por registrarte! Te llegará un correo con más información.</div>';
+                        }
+                        form.reset(); // Limpiar el formulario
+                        
+                        // Opcional: ocultar el mensaje después de 5 segundos
+                        setTimeout(() => {
+                            if (messageDiv) {
+                                messageDiv.innerHTML = '';
+                            }
+                        }, 5000);
+                    } else {
+                        if (messageDiv) {
+                            messageDiv.innerHTML = '<div style="color: #ff6b6b; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 20px;"><i class="fas fa-exclamation-circle"></i> Hubo un error. Por favor, inténtalo de nuevo.</div>';
+                        }
+                    }
+                } catch (error) {
+                    if (messageDiv) {
+                        messageDiv.innerHTML = '<div style="color: #ff6b6b; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 20px;"><i class="fas fa-exclamation-circle"></i> Error de conexión. Verifica tu internet e inténtalo de nuevo.</div>';
+                    }
+                }
+            });
         }
-    </script>
+    });
+</script>
 </body>
 </html>
