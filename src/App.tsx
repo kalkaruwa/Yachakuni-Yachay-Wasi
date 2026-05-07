@@ -13,6 +13,13 @@ import {
   Mountain
 } from 'lucide-react';
 
+const Chakana = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 100 100" className={className} fill="currentColor">
+    <path d="M30 10h40v20h20v40h-20v20h-40v-20h-20v-40h20z" />
+    <circle cx="50" cy="50" r="12" fill="white" />
+  </svg>
+);
+
 export default function App() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,8 +45,8 @@ export default function App() {
         {/* Navigation */}
         <nav className="flex justify-between items-center mb-12 px-2">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-andean-brown rounded-lg flex items-center justify-center">
-              <Mountain className="w-6 h-6 text-andean-gold" />
+            <div className="w-10 h-10 bg-andean-brown rounded-lg flex items-center justify-center p-1.5 transition-transform hover:rotate-45">
+              <Chakana className="w-full h-full text-andean-gold" />
             </div>
             <span className="font-sans font-extrabold text-xl tracking-[0.2em] uppercase">YACHAKUNI</span>
           </div>
@@ -70,7 +77,7 @@ export default function App() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl italic border-l-4 border-andean-gold pl-6 opacity-80 mb-8 max-w-2xl">
-                El sagrado sendero del Qhapaq Ñan - Centro de pensamiento para la proyección de la única filosofía compleja del sur global
+                Filosofía del Qhapaq Ñan - Centro de pensamiento que profundiza en este noble y sagrado sendero, para mayor autonomía, que urge en nuestra región.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#cta" className="px-8 py-4 bg-andean-brown text-white font-sans font-bold rounded-2xl hover:bg-black transition-all flex items-center gap-3 active:scale-95 shadow-xl shadow-andean-brown/10">
@@ -117,7 +124,7 @@ export default function App() {
             </div>
             <div>
               <h3 className="font-sans font-bold text-lg">Información fidedigna</h3>
-              <p className="text-sm opacity-60 italic">Directo a fuentes, crónicas originales, explicación detallada</p>
+              <p className="text-sm opacity-60 italic">+15 años de experiencia, fuentes serias, explicación detallada, directo a las crónicas (validadores académicos)</p>
             </div>
           </motion.div>
 
@@ -148,8 +155,10 @@ export default function App() {
           >
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-10"></div>
             <div className="relative z-10 max-w-xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-sans font-black mb-6">Recupera tu raíz</h2>
-              <p className="text-white/60 mb-10 italic">Únete a nuestras clases en vivo y sé parte de la restauración de la conciencia del Pirua.</p>
+              <h2 className="text-3xl md:text-5xl font-sans font-black mb-6">
+                Tus raíces ancestrales, tu futuro, reconecta ;)
+              </h2>
+              <p className="text-white/60 mb-10 italic">Únete para realizar emotivas charlas, clases en vivo, se parte de la restauración de nuestra memoria originaria, rumbo a una nación soberana</p>
               
               <AnimatePresence mode="wait">
                 {!isSuccess ? (
@@ -187,19 +196,22 @@ export default function App() {
           </div>
 
           {/* Social Cards Group */}
-          <div className="md:col-span-12 lg:col-span-4 md:row-span-1 bg-white rounded-[2.5rem] p-8 flex items-center justify-between border border-andean-brown/5 shadow-sm">
-            <div className="flex gap-4">
-              <a href="https://youtu.be/kNiYZZ3vMJU?si=j_ZMLRsKPS5Nz2Sg" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-red-600 hover:scale-110 transition-transform cursor-pointer shadow-sm">
-                <Youtube className="w-6 h-6 fill-red-600" />
+          <div className="md:col-span-12 lg:col-span-4 md:row-span-1 bg-[#3e0505] rounded-[2.5rem] p-8 flex flex-col items-center justify-center border border-white/5 shadow-sm">
+            <div className="flex gap-4 mb-4">
+              <a href="https://youtu.be/kNiYZZ3vMJU?si=j_ZMLRsKPS5Nz2Sg" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer border border-white/10">
+                <Youtube className="w-6 h-6 fill-white" />
               </a>
-              <a href="https://www.instagram.com/kalkaruwa/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-pink-600 hover:scale-110 transition-transform cursor-pointer shadow-sm">
+              <a href="https://www.instagram.com/kalkaruwa/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer border border-white/10">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="https://x.com/kalkaruwa" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-sky-50 rounded-full flex items-center justify-center text-sky-600 hover:scale-110 transition-transform cursor-pointer shadow-sm">
+              <a href="https://x.com/kalkaruwa" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer border border-white/10">
                 <Twitter className="w-6 h-6" />
               </a>
             </div>
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] opacity-30">Actualidad Andina</span>
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-[10px] font-sans font-bold text-white/40 uppercase tracking-[0.3em]">Youtube, Instagram, Twitter (X)</p>
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-andean-gold/60">Ayllu - Comunidad</span>
+            </div>
           </div>
 
         </div>
