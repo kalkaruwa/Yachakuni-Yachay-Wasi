@@ -158,7 +158,10 @@ export default function App() {
               <h2 className="text-3xl md:text-5xl font-sans font-black mb-6">
                 Tus raíces ancestrales, tu futuro, reconecta ;)
               </h2>
-              <p className="text-white/60 mb-10 italic">Únete para realizar emotivas charlas, clases en vivo, se parte de la restauración de nuestra memoria originaria, rumbo a una nación soberana</p>
+              <p className="text-white/60 mb-10 italic">
+                Únete para realizar emotivas charlas, clases en vivo, se parte de la restauración de nuestra memoria originaria.<br />
+                Whatsapp-Telegram: +51 989 287 764 (Yaçak Kalkaruwaq)
+              </p>
               
               <AnimatePresence mode="wait">
                 {!isSuccess ? (
