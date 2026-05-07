@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", "Cormorant Garamond", ui-serif, Georgia, serif;
+  
+  --color-andean-brown: #3E2723;
+  --color-andean-beige: #F5F2ED;
+  --color-andean-gold: #D4AF37;
+  --color-andean-moss: #556B2F;
+  --color-andean-stone: #8F9779;
+}
+
+@layer base {
+  body {
+    @apply bg-andean-beige text-andean-brown font-serif antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-sans font-bold tracking-tight;
+  }
+}
+
+.text-gold { color: var(--color-andean-gold); }
+.bg-gold { background-color: var(--color-andean-gold); }
+.border-gold { border-color: var(--color-andean-gold); }
