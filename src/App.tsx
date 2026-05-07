@@ -61,7 +61,7 @@ export default function App() {
           >
             <div className="relative z-10">
               <span className="inline-block px-3 py-1 bg-andean-gold/10 text-andean-gold rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-andean-gold/20">
-                Memoria Ancestral
+                Identidad originaria
               </span>
               <h1 className="text-4xl md:text-7xl font-sans font-black mb-6 leading-[1.1]">
                 Yachakuni <br />
@@ -70,7 +70,7 @@ export default function App() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl italic border-l-4 border-andean-gold pl-6 opacity-80 mb-8 max-w-2xl">
-                El verdadero Qhapaq Ñan – Centro de pensamiento para la recuperación del panenteísmo andino.
+                El sagrado sendero del Qhapaq Ñan - Centro de pensamiento para la proyección de la única filosofía compleja del sur global
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#cta" className="px-8 py-4 bg-andean-brown text-white font-sans font-bold rounded-2xl hover:bg-black transition-all flex items-center gap-3 active:scale-95 shadow-xl shadow-andean-brown/10">
@@ -96,13 +96,13 @@ export default function App() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
             <div className="absolute bottom-8 left-8 right-8 text-white">
               <p className="font-sans font-black text-2xl mb-2">Pachakamaq</p>
-              <p className="text-sm opacity-70 italic">El Alma del Universo descolonizada de lo convencional.</p>
+              <p className="text-sm opacity-70 italic">Ordenador del tiempo y espacio ¿Porqué Pachakamaq es una visión mono-animista? ¿Porqué es panenteista?</p>
             </div>
-            <div className="absolute top-8 right-8">
+            <a href="https://youtu.be/kNiYZZ3vMJU?si=j_ZMLRsKPS5Nz2Sg" target="_blank" rel="noopener noreferrer" className="absolute top-8 right-8">
               <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 hover:scale-110 transition-transform cursor-pointer">
                 <Play className="w-5 h-5 text-white fill-white" />
               </div>
-            </div>
+            </a>
           </motion.div>
 
           {/* Feature: Sources */}
@@ -116,8 +116,8 @@ export default function App() {
               <BookOpen className="w-7 h-7 text-andean-brown" />
             </div>
             <div>
-              <h3 className="font-sans font-bold text-lg">Fuentes Críticas</h3>
-              <p className="text-sm opacity-60 italic">Documentos históricos sin filtros New Age.</p>
+              <h3 className="font-sans font-bold text-lg">Información fidedigna</h3>
+              <p className="text-sm opacity-60 italic">Directo a fuentes, crónicas originales, explicación detallada</p>
             </div>
           </motion.div>
 
@@ -133,8 +133,8 @@ export default function App() {
               <ShieldCheck className="w-7 h-7 text-white" />
             </div>
             <div>
-              <h3 className="font-sans font-bold text-lg text-andean-moss">Much'ay Auténtico</h3>
-              <p className="text-sm text-andean-moss/70 italic">Los 4 niveles de devoción andina original.</p>
+              <h3 className="font-sans font-bold text-lg text-andean-moss">Dimensiones del Qhapaq Ñan:</h3>
+              <p className="text-sm text-andean-moss/70 italic">Religiosa, Filosófica, Histórica, Política, Económica, Academica, Nacional etc.</p>
             </div>
           </motion.div>
 
@@ -168,8 +168,9 @@ export default function App() {
                   </form>
                 ) : (
                   <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="bg-white/10 border border-white/20 p-8 rounded-3xl">
-                    <p className="text-xl font-bold mb-2 text-andean-gold">¡Bienvenido al Qhapaq Ñan!</p>
-                    <p className="text-white/60 text-sm">Redirigiéndote al formulario oficial para completar el registro...</p>
+                    <p className="text-xl font-bold mb-2 text-andean-gold">¡Registro procesado!</p>
+                    <p className="text-white/60 text-sm mb-4">La información se enviará a kalkaruwa@gmail.com y yachakuniyachaywasi@gmail.com</p>
+                    <p className="text-white/60 text-xs">Redirigiéndote al portal oficial...</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -181,22 +182,22 @@ export default function App() {
             <div className="flex gap-2 mb-4">
               {[1, 2, 3, 4].map(i => <div key={i} className="w-2 h-2 rounded-full bg-andean-gold"></div>)}
             </div>
-            <p className="text-xs font-sans uppercase tracking-[0.2em] font-bold opacity-30">Cercanía Ancestral</p>
-            <p className="text-sm mt-2 opacity-60">"No es misticismo, es conocimiento riguroso."</p>
+            <p className="text-xs font-sans uppercase tracking-[0.2em] font-bold opacity-30">Somos una civilización propia</p>
+            <p className="text-sm mt-2 opacity-60">Somos una Nación Ancestral con + 5000 años de historia</p>
           </div>
 
           {/* Social Cards Group */}
           <div className="md:col-span-12 lg:col-span-4 md:row-span-1 bg-white rounded-[2.5rem] p-8 flex items-center justify-between border border-andean-brown/5 shadow-sm">
             <div className="flex gap-4">
-              <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-red-600 hover:scale-110 transition-transform cursor-pointer shadow-sm">
+              <a href="https://youtu.be/kNiYZZ3vMJU?si=j_ZMLRsKPS5Nz2Sg" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-red-600 hover:scale-110 transition-transform cursor-pointer shadow-sm">
                 <Youtube className="w-6 h-6 fill-red-600" />
-              </div>
-              <div className="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-pink-600 hover:scale-110 transition-transform cursor-pointer shadow-sm">
+              </a>
+              <a href="https://www.instagram.com/kalkaruwa/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-pink-600 hover:scale-110 transition-transform cursor-pointer shadow-sm">
                 <Instagram className="w-6 h-6" />
-              </div>
-              <div className="w-12 h-12 bg-sky-50 rounded-full flex items-center justify-center text-sky-600 hover:scale-110 transition-transform cursor-pointer shadow-sm">
+              </a>
+              <a href="https://x.com/kalkaruwa" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-sky-50 rounded-full flex items-center justify-center text-sky-600 hover:scale-110 transition-transform cursor-pointer shadow-sm">
                 <Twitter className="w-6 h-6" />
-              </div>
+              </a>
             </div>
             <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] opacity-30">Actualidad Andina</span>
           </div>

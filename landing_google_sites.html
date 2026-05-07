@@ -105,10 +105,12 @@
         .feature-2 { grid-column: span 12; grid-row: span 2; background: rgba(85, 107, 47, 0.1); }
         .cta { grid-column: span 12; grid-row: span 4; background: var(--black); color: white; text-align: center; }
         .social { grid-column: span 12; grid-row: span 2; }
+        .decorative { grid-column: span 12; grid-row: span 1; background: var(--white); display: flex; flex-direction: column; justify-content: center; }
 
         @media (min-width: 768px) {
             .feature-1 { grid-column: span 6; }
             .feature-2 { grid-column: span 6; }
+            .decorative { grid-column: span 4; }
         }
 
         @media (min-width: 1024px) {
@@ -117,6 +119,7 @@
             .feature-1 { grid-column: span 4; grid-row: span 2; }
             .feature-2 { grid-column: span 4; grid-row: span 2; }
             .cta { grid-column: span 8; grid-row: span 4; }
+            .decorative { grid-column: span 4; grid-row: span 1; }
             .social { grid-column: span 4; grid-row: span 2; }
         }
 
@@ -320,9 +323,9 @@
             
             <!-- Hero Bento -->
             <div class="card hero">
-                <span class="tag">Centro de Memoria</span>
+                <span class="tag">Identidad originaria</span>
                 <h1>Yachakuni <br><span class="gradient-text">Yachay Wasi</span></h1>
-                <p class="subtitle">Recuperando el Qhapaq Ñan: El panenteísmo andino auténtico.</p>
+                <p class="subtitle">El sagrado sendero del Qhapaq Ñan - Centro de pensamiento para la proyección de la única filosofía compleja del sur global</p>
                 <p style="margin-bottom: 40px; opacity: 0.7; max-width: 550px;">Ideal para quienes buscan recuperar la esencia ancestral de Pirua, lejos de desvíos comerciales o espiritualidades vacías.</p>
                 <a href="#unirse" class="btn">Iniciar Viaje <i class="fas fa-arrow-right"></i></a>
             </div>
@@ -332,8 +335,8 @@
                 <img src="https://images.unsplash.com/photo-1589182337358-2cb63acfa1f5?auto=format&fit=crop&q=80&w=1200" class="visual-img">
                 <div style="position:relative; z-index: 1;">
                     <h3 style="font-family:'Montserrat'; font-weight: 900; font-size: 1.8rem; letter-spacing: 1px;">PACHAKAMAQ</h3>
-                    <p style="font-style: italic; opacity: 0.8; font-size: 0.95rem;">El Alma del Universo</p>
-                    <div style="margin-top: 30px; width: 60px; height: 60px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+                    <p style="font-style: italic; opacity: 0.8; font-size: 0.95rem;">Ordenador del tiempo y espacio ¿Porqué Pachakamaq es una visión mono-animista? ¿Porqué es panenteista?</p>
+                    <div onclick="window.open('https://youtu.be/kNiYZZ3vMJU?si=j_ZMLRsKPS5Nz2Sg', '_blank')" style="margin-top: 30px; width: 60px; height: 60px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); cursor: pointer;">
                         <i class="fas fa-play" style="font-size: 18px;"></i>
                     </div>
                 </div>
@@ -342,15 +345,15 @@
             <!-- Feature 1 Bento -->
             <div class="card feature-1">
                 <div class="icon-box"><i class="fas fa-scroll"></i></div>
-                <h3 style="font-family:'Montserrat'; font-weight: 800; margin-bottom: 10px;">Fuentes Críticas</h3>
-                <p style="font-size: 0.9rem; font-style: italic; opacity: 0.6;">Acceso a crónicas originales y estudios de arqueología profunda.</p>
+                <h3 style="font-family:'Montserrat'; font-weight: 800; margin-bottom: 10px;">Información fidedigna</h3>
+                <p style="font-size: 0.9rem; font-style: italic; opacity: 0.6;">Directo a fuentes, crónicas originales, explicación detallada</p>
             </div>
 
             <!-- Feature 2 Bento -->
             <div class="card feature-2">
                 <div class="icon-box" style="background:var(--andean-moss); color:white;"><i class="fas fa-sun"></i></div>
-                <h3 style="font-family:'Montserrat'; font-weight: 800; margin-bottom: 10px;">Much'ay</h3>
-                <p style="font-size: 0.9rem; font-style: italic; opacity: 0.7;">Restauración de los 4 niveles tradicionales de devoción andina.</p>
+                <h3 style="font-family:'Montserrat'; font-weight: 800; margin-bottom: 10px;">Dimensiones del Qhapaq Ñan:</h3>
+                <p style="font-size: 0.9rem; font-style: italic; opacity: 0.7;">Religiosa, Filosófica, Histórica, Política, Económica, Academica, Nacional etc.</p>
             </div>
 
             <!-- CTA Bento -->
@@ -360,16 +363,31 @@
                     <p style="font-style: italic; opacity: 0.6; max-width: 500px; margin: 0 auto;">Inscríbete para las clases virtuales en vivo y el material de estudio exclusivo.</p>
                     
                     <form id="main-form" class="reg-form" onsubmit="handleForm(event)">
-                        <input type="email" class="reg-input" placeholder="Ingresa tu correo" required>
+                        <!-- Para que funcione realmente en Google Sites, puedes usar un servicio como Formspree -->
+                        <!-- <form id="main-form" class="reg-form" action="https://formspree.io/f/TU_ID_AQUÍ" method="POST"> -->
+                        <input type="email" name="email" class="reg-input" placeholder="Ingresa tu correo" required>
                         <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;">REGISTRARME <i class="fas fa-paper-plane"></i></button>
                     </form>
 
                     <div id="success-state">
                         <i class="fas fa-check-circle" style="font-size: 40px; color: var(--andean-gold); margin-bottom: 20px;"></i>
-                        <h3 style="font-family:'Montserrat';">¡Bienvenido!</h3>
-                        <p style="opacity: 0.6; font-size: 0.9rem; margin-top: 10px;">Redirigiéndote al portal de registro oficial...</p>
+                        <h3 style="font-family:'Montserrat';">¡Registro Iniciado!</h3>
+                        <p style="opacity: 0.6; font-size: 0.9rem; margin-top: 10px;">Tu registro se enviará a <b>kalkaruwa@gmail.com</b> y <b>yachakuniyachaywasi@gmail.com</b>.</p>
+                        <p style="opacity: 0.4; font-size: 0.8rem; margin-top: 10px;">Redirigiéndote para completar...</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Decorative Card -->
+            <div class="card decorative">
+                <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                    <div style="width: 8px; height: 8px; background: var(--andean-gold); border-radius: 50%;"></div>
+                    <div style="width: 8px; height: 8px; background: var(--andean-gold); border-radius: 50%;"></div>
+                    <div style="width: 8px; height: 8px; background: var(--andean-gold); border-radius: 50%;"></div>
+                    <div style="width: 8px; height: 8px; background: var(--andean-gold); border-radius: 50%;"></div>
+                </div>
+                <p class="tag" style="margin-bottom: 10px; opacity: 0.3;">Somos una civilización propia</p>
+                <p style="font-size: 0.9rem; opacity: 0.6;">Somos una Nación Ancestral con + 5000 años de historia</p>
             </div>
 
             <!-- Social Bento -->
@@ -377,9 +395,9 @@
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;">
                     <p class="tag" style="margin-bottom: 0;">Presencia Digital</p>
                     <div class="social-box">
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-btn social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-btn social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtu.be/kNiYZZ3vMJU?si=j_ZMLRsKPS5Nz2Sg" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/kalkaruwa/" target="_blank" class="social-btn social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/kalkaruwa" target="_blank" class="social-btn social-link"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
