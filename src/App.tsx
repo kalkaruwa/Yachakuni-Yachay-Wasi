@@ -34,9 +34,9 @@ export default function App() {
       setIsSubmitting(false);
       setIsSuccess(true);
       setTimeout(() => {
-        window.open('https://forms.gle/sample-link', '_blank');
-      }, 2000);
-    }, 1500);
+        window.open('https://docs.google.com/forms/d/e/1FAIpQLSc4eJ5OR1gGr_y5TJfS6Q77fWIjtH0mhh3n4U6a6lp5--h9IQ/viewform?usp=publish-editor', '_blank');
+      }, 1500);
+    }, 1000);
   };
 
   return (
@@ -177,9 +177,9 @@ export default function App() {
                   </form>
                 ) : (
                   <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="bg-white/10 border border-white/20 p-8 rounded-3xl">
-                    <p className="text-xl font-bold mb-2 text-andean-gold">¡Registro procesado!</p>
-                    <p className="text-white/60 text-sm mb-4">La información se enviará a kalkaruwa@gmail.com y yachakuniyachaywasi@gmail.com</p>
-                    <p className="text-white/60 text-xs">Redirigiéndote al portal oficial...</p>
+                    <p className="text-xl font-bold mb-2 text-andean-gold">¡Redirigiendo a Google Forms!</p>
+                    <p className="text-white/60 text-sm mb-4">Para que tu registro llegue a <b>kalkaruwa@gmail.com</b> y <b>yachakuniyachaywasi@gmail.com</b>, por favor completa el formulario.</p>
+                    <p className="text-white/60 text-xs">Cargando...</p>
                   </motion.div>
                 )}
               </AnimatePresence>
