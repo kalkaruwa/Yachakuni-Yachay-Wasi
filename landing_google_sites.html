@@ -369,11 +369,10 @@
                     </h2>
                     <p style="font-style: italic; opacity: 0.6; max-width: 500px; margin: 0 auto;">Únete para realizar emotivas charlas, clases en vivo, se parte de la restauración de nuestra memoria originaria, rumbo a una nación soberana</p>
                     
-                    <form id="main-form" class="reg-form" onsubmit="handleForm(event)">
-                        <!-- Para que funcione realmente en Google Sites, puedes usar un servicio como Formspree -->
-                        <!-- <form id="main-form" class="reg-form" action="https://formspree.io/f/TU_ID_AQUÍ" method="POST"> -->
+                    <form name="registro" method="POST" data-netlify="true" action="/gracias">
+                        <input type="hidden" name="form-name" value="registro" />
                         <input type="email" name="email" class="reg-input" placeholder="Ingresa tu correo" required>
-                        <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;">REGISTRARME <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-gold">REGISTRARME</button>
                     </form>
 
                     <div id="success-state">
